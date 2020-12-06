@@ -9,23 +9,27 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 
 # Principais Funcionalidades
 
-Gerar orçamento automaticamente;
-Gerar lista de compras automaticamente;
-Gerar contrato automaticamente;
-Criar evento na agenda;
-Enviar link de solicitando feedback dia após evento; 
-Landing page para publico em geral solictar orçamentos;
-Banco de dados com infos dos clientes;
-Banco de dados com infos dos orçamentos/eventos;
+<ul>
+<li>Gerar orçamento automaticamente;</li>
+<li>Gerar lista de compras automaticamente;</li>
+<li>Gerar contrato automaticamente;</li>
+<li>Criar evento na agenda;</li>
+<li>Enviar link de solicitando feedback dia após evento; </li>
+<li>Landing page para publico em geral solictar orçamentos;</li>
+<li>Banco de dados com infos dos clientes;</li>
+<li>Banco de dados com infos dos orçamentos/eventos;</li>
+</ul>
 
 # Tecnologias
 
-Projetct Model Canvas - Para definição de escopo e detalhes do projeto;
-Scrum - Para gerenciamento do projeto;
-GitHub - Para controle de versão;
-Angular - Para frontend;
-Go ou Java - Para backend;
-SQL/MySQL/SQLite - Para banco de dados
+<ul>
+<li>Projetct Model Canvas - Para definição de escopo e detalhes do projeto;</li>
+<li>Scrum - Para gerenciamento do projeto;</li>
+<li>GitHub - Para controle de versão;</li>
+<li>Angular - Para frontend;</li>
+<li>Golang ou Java - Para backend;</li>
+<li>SQL/MySQL/SQLite - Para banco de dados</li>
+</ul>
 
 # Observação
 
