@@ -1,3 +1,12 @@
+# Equipe
+
+</ul>
+<li>Felipe Aragão Nogueira de Freitas </li>
+<li>Marina de Souza Faria</li>
+<li>Pedro Callegari Portugal</li>
+<li>Rogerio Veiga Andrade<li>
+</ul>
+
 # catering-service-manager
 Desenvolvimento de sistema de gerenciamento de negócios de catering para chefs brasileiros. Catering é o serviço de fornecimento e preparo de alimentos a domicílio. Em geral, contratado para eventos de datas comemorativas quando as famílias e amigos se reunem em casa e não querem ter dificuldades na recepção de convidados. 
 
@@ -30,7 +39,3 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 <li>Golang ou Java - Para backend;</li>
 <li>SQL/MySQL/SQLite - Para banco de dados</li>
 </ul>
-
-# Observação
-
-Já existem chefs de cozinha reais que serão utilizados como stakeholders externos e fonte de feeback para o sistema. 
