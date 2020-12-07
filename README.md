@@ -4,7 +4,7 @@
 <li>Felipe Aragão Nogueira de Freitas </li>
 <li>Marina de Souza Faria</li>
 <li>Pedro Callegari Portugal</li>
-<li>Rogerio Veiga Andrade<li>
+<li>Rogerio Veiga Andrade</li>
 </ul>
 
 # catering-service-manager
