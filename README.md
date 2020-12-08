@@ -19,9 +19,9 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 # Principais Funcionalidades
 
 <ul>
-<li>Gerar orçamentos automaticamente;</li>
-<li>Gerar listas de compras automaticamente;</li>
-<li>Gerar contratos automaticamente;</li>
+<li>Gerar orçamentos sistematicamente;</li>
+<li>Gerar listas de compras sistematicamente;</li>
+<li>Gerar contratos sistematicamente;</li>
 <li>Criar eventos na agenda;</li>
 <li>Enviar link solicitando feedbacks dias após evento; </li>
 <li>Landing page para público em geral solictar orçamentos;</li>
