@@ -2,7 +2,7 @@
 
 </ul>
 <li>Felipe Aragão Nogueira de Freitas </li>
-<li>Marina de Souza Faria</li>
+<li>Marina de Sousa Faria</li>
 <li>Pedro Callegari Portugal</li>
 <li>Rogerio Veiga Andrade</li>
 </ul>
