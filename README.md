@@ -22,8 +22,6 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 <li>Gerar orçamentos sistematicamente;</li>
 <li>Gerar listas de compras sistematicamente;</li>
 <li>Gerar contratos sistematicamente;</li>
-<li>Criar eventos na agenda;</li>
-<li>Enviar link solicitando feedbacks dias após evento; </li>
 <li>Landing page para público em geral solictar orçamentos;</li>
 <li>Banco de dados com infos dos clientes;</li>
 <li>Banco de dados com infos dos orçamentos/eventos;</li>
