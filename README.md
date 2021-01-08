@@ -27,6 +27,9 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 <li>Banco de dados com infos dos orçamentos/eventos;</li>
 </ul>
 
+# Link do Board
+https://dev.azure.com/TrabSoft/Catering%20Service%20Manager/_sprints/taskboard/Catering%20Service%20Manager%20Team/Catering%20Service%20Manager/Sprint%202
+
 # Tecnologias
 
 <ul>
