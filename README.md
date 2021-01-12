@@ -36,7 +36,8 @@ Back-end: https://github.com/marinafaria/catering-service-manager-backend
 
 - Sprint 2: https://dev.azure.com/TrabSoft/Catering%20Service%20Manager/_sprints/taskboard/Catering%20Service%20Manager%20Team/Catering%20Service%20Manager/Sprint%202
 
--Sprint 3: https://dev.azure.com/TrabSoft/Catering%20Service%20Manager/_sprints/taskboard/Catering%20Service%20Manager%20Team/Catering%20Service%20Manager/Sprint%203
+- Sprint 3: https://dev.azure.com/TrabSoft/Catering%20Service%20Manager/_sprints/taskboard/Catering%20Service%20Manager%20Team/Catering%20Service%20Manager/Sprint%203
+
 # Tecnologias
 
 <ul>
