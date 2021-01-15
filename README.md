@@ -48,3 +48,4 @@ Back-end: https://github.com/marinafaria/catering-service-manager-backend
 <li>Golang ou Java - Para backend;</li>
 <li>SQL/MySQL/SQLite - Para banco de dados</li>
 </ul>
+
