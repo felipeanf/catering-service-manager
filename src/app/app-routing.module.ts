@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: 'quotation',
     loadChildren: async () => (await import('./modules/quotation/quotation.module')).QuotationModule
-  }
+  },
 ];
 
 @NgModule({
