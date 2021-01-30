@@ -3,15 +3,9 @@ import { IFichaTecnica } from './fichaTecnica';
 export interface IProdutos {
     id: number;
     nome: string;
-    // categoria: ICategoriaProduto;
-    categoria: string;
+    categoria: ICategoriaProduto;
     unidadeMedida: string;
     precoProdutoUnitario: number;
     quantidadeEstoque: number;
-    // idFichaTecnica: IFichaTecnica;
-        
+    idFichaTecnica: IFichaTecnica;
     }
-
-
-
-     

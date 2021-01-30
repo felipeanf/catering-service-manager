@@ -6,6 +6,7 @@ const routes: Routes = [
     path: 'quotation',
     loadChildren: async () => (await import('./modules/quotation/quotation.module')).QuotationModule
   },
+
   {
     path: 'products',
     loadChildren: async () => (await import('./modules/products/products.module')).ProductsModule
