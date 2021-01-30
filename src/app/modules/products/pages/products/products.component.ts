@@ -5,7 +5,7 @@ import { MatTable } from '@angular/material/table';
 import { ProductsDataSource } from '../../products-datasource';
 import { IProdutos } from '../../../../interfacesBanco/produtos';
 import { DataService } from '../../data.service';
-const axios = require('axios').default;
+//const axios = require('axios').default;
 
 
 @Component({
