@@ -3,9 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { ProductsDataSource } from '../../products-datasource';
-import { IProdutos } from '../../../../interfacesBanco/produtos';
-import { DataService } from '../../data.service';
-//const axios = require('axios').default;
+import { ProductsService } from '../../../../shared/services/products.service';
+import { IProdutos } from 'src/app/InterfacesBanco/produtos';
 
 
 @Component({
@@ -24,7 +23,7 @@ export class ProductsComponent implements AfterViewInit, OnInit {
 
   public products:IProdutos[] = [];
 
-  constructor(private _dataService: DataService){ }
+  constructor(private _dataService: ProductsService){ }
 
 
   getProducts(){
@@ -40,8 +39,7 @@ export class ProductsComponent implements AfterViewInit, OnInit {
 
     this.dataSource = new ProductsDataSource(this._dataService);
 
-
-    console.log(this.dataSource)
+    console.log(this.dataSource);
     }
   
 

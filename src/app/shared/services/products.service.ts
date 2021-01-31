@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { IProdutos } from '../../interfacesBanco/produtos';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class DataService {
+export class ProductsService {
   private productsUrl = 'http://localhost:8000/product'; 
   public products = [];
   

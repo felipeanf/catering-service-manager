@@ -3,10 +3,10 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map, tap } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { IProdutos } from '../../interfacesBanco/produtos';
+import { IProdutos } from '../../InterfacesBanco/produtos';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductsComponent } from './pages/products/products.component';
-import { DataService } from './data.service';
+import { ProductsService } from '../../shared/services/products.service';
 
 
 
@@ -27,7 +27,7 @@ export class ProductsDataSource extends DataSource<IProdutos> {
 
 
 
-  constructor(private produtos:DataService) {
+  constructor(private produtos:ProductsService) {
     super();
     this.produtos.getProductsData().subscribe(httpData=> {
       this.data = httpData.data
