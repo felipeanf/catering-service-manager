@@ -4,6 +4,7 @@ import { QuotationComponent } from './pages/quotation.component';
 import { QuotationRoutingModule } from './quotation-routing.module';
 import { NewQuotationComponent } from './pages/new-quotation/new-quotation.component';
 import { SelectedProductComponent } from './components/selected-product/selected-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { SelectedProductComponent } from './components/selected-product/selected
   ],
   imports: [
     CommonModule,
-    QuotationRoutingModule
+    QuotationRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   entryComponents: [
     SelectedProductComponent

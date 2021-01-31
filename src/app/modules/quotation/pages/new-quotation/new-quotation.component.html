@@ -1,59 +1,96 @@
 <div class="new-quotation-container">
     <h1>Novo orçamento</h1>
+    <form 
+        [formGroup]="newQuotation"
+        (change)="saved = false"
+    >
+        <div class="form-group">
+            <select formControlName="idCliente" class="form-control">
+                <option selected disabled hidden>Selecione o cliente</option>
+                    <option 
+                        *ngFor="let customer of customers"
+                        [value]="customer.id"
+                    >
+                        {{ customer.nome }}
+                    </option>
+            </select>
+        </div>
 
-    <input type="text" placeholder="Cliente">
-    <input type="text" placeholder="Endereço">
-    <input type="date" placeholder="Data">
-    <input type="time" placeholder="Hora">
-    <input type="number" placeholder="Nº Pessoas">
-    <select>
-        <option selected disabled hidden>Selecione o tipo de evento</option>
-            <option 
-                *ngFor="let event of eventTypes"
-                [value]="event.tipoEvento"
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input
+                class="form-control"
+                type="text" 
+                id="endereco"
+                formControlName="enderecoEvento"
             >
-                {{ event.tipoEvento }}
-            </option>
-    </select>
+        </div>
 
-    <br>
-    <p>Itens</p>
-    <br>
-    <div class="select-product">
-        <select (change)="productSelected($event)">
-            <option selected disabled hidden>Selecione um produto</option>
-            <option 
-                *ngFor="let product of products; let i = index"
-                [value]="product.id"
-            >
-                {{ product.nome }}
-            </option>
-        </select>
         <input 
-            type="number" 
-            placeholder="Quantidade" 
-            [value]="selectedQuantity"
-            (input)="selectedQuantity = $event.target.value"
+            type="datetime-local"
+            placeholder="Data e hora"
+            formControlName="dataEvento"
         >
-        <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
-        <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
-        <button (click)="handleSelectedProduct()">Adicionar</button>
-    </div>
-    <div #target></div>
-    <p>Preço total: {{ totalPrice }}</p>
-    Desconto:
-    <input 
-    type="number"
-    [value]="discountPrice"
-    (input)="discountPrice = $event.target.value"
-    (change)="calculateFinalPrice()"
-    >
-    Taxa deslocamento:
-    <input 
-    type="number"
-    [value]="transportTax"
-    (input)="transportTax = $event.target.value"
-    (change)="calculateFinalPrice()"
-    >
-    <p>Preço final: {{ finalPrice }}</p>
+
+        <input
+            type="number"
+            placeholder="Nº Pessoas"
+            formControlName="quantidadePessoas"
+        >
+
+        <select formControlName="tipoEvento">
+            <option selected disabled hidden>Selecione o tipo de evento</option>
+                <option 
+                    *ngFor="let event of eventTypes"
+                    [value]="event.tipoEvento"
+                >
+                    {{ event.tipoEvento }}
+                </option>
+        </select>
+
+        <br>
+        <p>Itens</p>
+        <br>
+        <div class="select-product">
+            <select (change)="productSelected($event)">
+                <option selected disabled hidden>Selecione um produto</option>
+                <option 
+                    *ngFor="let product of products; let i = index"
+                    [value]="product.id"
+                >
+                    {{ product.nome }}
+                </option>
+            </select>
+            <input 
+                type="number" 
+                placeholder="Quantidade" 
+                [ngModelOptions]="{standalone: true}"
+                [(ngModel)]="selectedQuantity"
+            >
+            <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
+            <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
+            <button (click)="handleSelectedProduct()">Adicionar</button>
+        </div>
+        <div #target></div>
+        <p>Preço total: {{ totalPrice }}</p>
+        Desconto:
+        <input 
+            type="number"
+            (change)="calculateFinalPrice()"
+            formControlName="valorDesconto"
+        >
+        Taxa deslocamento:
+        <input 
+            type="number"
+            (change)="calculateFinalPrice()"
+            formControlName="taxaDeslocamento"
+        >
+        <p>Preço final: {{ finalPrice }}</p>
+
+        <button 
+            type="submit" 
+            (click)="handleSubmit()"
+            [disabled]="newQuotation.invalid"
+        >Enviar</button>
+    </form>
 </div>

@@ -1,10 +1,16 @@
-import { Component, ComponentFactoryResolver, ComponentRef, OnChanges, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ComponentRef, OnChanges, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { IClientes } from 'src/app/InterfacesBanco/clientes';
+import { IOrcamentos } from 'src/app/InterfacesBanco/orcamentos';
 import { IProdutos } from 'src/app/InterfacesBanco/produtos';
 import { ITipoEvento } from 'src/app/InterfacesBanco/tipoEvento';
+import { CustomerService } from 'src/app/shared/services/customer.service';
 import { EventTypesService } from 'src/app/shared/services/event-types.service';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { SelectedProductComponent } from '../../components/selected-product/selected-product.component';
 import { IItemProduto } from '../../models/item.interface';
+import { QuotationService } from '../../services/quotation.service';
 //import { CurrentProductPricePipe } from './current-product-price.pipe'
 
 @Component({
@@ -12,35 +18,66 @@ import { IItemProduto } from '../../models/item.interface';
   templateUrl: './new-quotation.component.html',
   styleUrls: ['./new-quotation.component.css']
 })
-export class NewQuotationComponent implements OnInit, OnChanges {
+export class NewQuotationComponent implements OnInit, OnChanges, OnDestroy {
 
   public currentProduct: IProdutos | null = null;
   products: IProdutos[] = [];
   eventTypes: ITipoEvento[] = [];
+  customers: IClientes[] = [];
+
   item: IItemProduto;
+
+  public saved = false;
+
   totalPrice: number = 0;
-  discountPrice: number = 0;
-  transportTax: number = 0;
   finalPrice: number = 0;
   selectedQuantity: number = 0;
   selectedProducts: IItemProduto[] = [];
+
+  public newQuotation = this.formBuilder.group({
+    tipoEvento: ['Selecione o tipo de evento', Validators.required],
+    idCliente: ['Selecione o cliente', Validators.required],
+    dataEvento: [null, Validators.required],
+    quantidadePessoas: [null, Validators.required],
+    enderecoEvento: [null, Validators.required],
+    taxaDeslocamento: [null, Validators.required],
+    valorDesconto: [null, Validators.required]
+  });
+
+  private productGetDataSub: Subscription;
+  private eventTypesGetDataSub: Subscription;
+  private customerGetDataSub: Subscription;
+
   @ViewChild('target', {static : false, read: ViewContainerRef}) target: ViewContainerRef;
   private componentRef: ComponentRef<any>;
 
   constructor(
     private productsService: ProductsService,
+    private eventTypesService: EventTypesService,
+    private quotationService: QuotationService,
+    private customerService: CustomerService,
     private resolver: ComponentFactoryResolver,
-    private eventTypesService: EventTypesService
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
-    this.productsService.getProductsData().subscribe(data => this.products = data.data);
-    this.eventTypesService.getEventTypes().subscribe(data => this.eventTypes = data.data);
+    this.productGetDataSub = this.productsService.getProductsData().subscribe(data => this.products = data.data);
+    this.eventTypesGetDataSub = this.eventTypesService.getEventTypes().subscribe(data => this.eventTypes = data.data);
+    this.customerGetDataSub = this.customerService.getCustomers().subscribe(data => this.customers = data.data);
+
+  }
+
+  ngOnDestroy(){
+    this.productGetDataSub.unsubscribe();
+    this.eventTypesGetDataSub.unsubscribe();
+    this.customerGetDataSub.unsubscribe();
   }
 
   ngOnChanges() {
-    this.calculateFinalPrice();
+    //this.calculateFinalPrice();
   }
+
+  
 
   productSelected(event: any) {
     const index = this.products.findIndex(prod => prod.id === parseInt(event.target.value));
@@ -70,7 +107,17 @@ export class NewQuotationComponent implements OnInit, OnChanges {
   }
 
   calculateFinalPrice(){
-    this.finalPrice = this.totalPrice - this.discountPrice + this.transportTax;
+    this.finalPrice = this.totalPrice - this.newQuotation.value.valorDesconto + this.newQuotation.value.taxaDeslocamento;
+  }
+
+  handleSubmit() {
+    this.quotationService.create(this.selectedProducts, { ...this.newQuotation.value, valorFinal: this.finalPrice }).subscribe(result => {
+      console.log(result);
+      if (result.data) {
+        this.newQuotation.reset();
+        this.saved = true;
+      }
+    })
   }
 
 }
