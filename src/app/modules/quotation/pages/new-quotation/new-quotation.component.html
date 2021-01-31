@@ -1,1 +1,29 @@
-<p>new-quotation works!</p>
+<div class="new-quotation-container">
+    <h1>Novo orçamento</h1>
+
+    <input type="text" placeholder="Cliente">
+    <input type="text" placeholder="Endereço">
+    <input type="date" placeholder="Data">
+    <input type="time" placeholder="Hora">
+    <input type="number" placeholder="Nº Pessoas">
+    <input type="text" placeholder="Tipo de evento">
+
+    <br>
+    <p>Itens</p>
+    <br>
+    <div class="select-product">
+        <select (change)="productSelected($event)">
+            <option selected disabled hidden>Selecione um produto</option>
+            <option 
+                *ngFor="let product of products; let i = index"
+                [value]="product.id"
+            >
+                {{ product.nome }}
+            </option>
+        </select>
+        <input type="number" placeholder="Quantidade">
+        <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
+        <button (click)="handleSelectedProduct()">Adicionar</button>
+    </div>
+    <div #target></div>
+</div>

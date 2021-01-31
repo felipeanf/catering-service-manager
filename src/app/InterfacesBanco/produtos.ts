@@ -1,3 +1,4 @@
+
 import { ICategoriaProduto } from './categoriaProduto';
 import { IFichaTecnica } from './fichaTecnica';
 export interface IProdutos {
