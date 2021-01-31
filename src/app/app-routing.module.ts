@@ -10,8 +10,12 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: async () => (await import('./modules/products/products.module')).ProductsModule
-  }
+  },
 
+  {
+    path: 'customers',
+    loadChildren: async () => (await import('./modules/customers/customers.module')).CustomersModule
+  }
 ];
 
 @NgModule({
