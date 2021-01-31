@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { NewProductRoutingModule } from './new-product-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
+import { NewProductComponent } from './pages/new-product.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NewProductComponent
+  ],
   imports: [
     CommonModule,
     NewProductRoutingModule,
