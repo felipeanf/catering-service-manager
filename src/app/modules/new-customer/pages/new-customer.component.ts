@@ -1,33 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { Console } from 'console';
-import {FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
-
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { CustomerService} from 'src/app/shared/services/costumer.service';
+import { Subscription } from 'rxjs';
+import { MeasurementUnitService } from 'src/app/shared/services/measurement-unit.service';
 
 @Component({
   selector: 'app-new-customer',
   templateUrl: './new-customer.component.html',
   styleUrls: ['./new-customer.component.css']
 })
-export class NewCustomerComponent implements OnInit {
+export class NewCustomerComponent implements OnInit, OnDestroy {
+  public cadastroCliente = this.formBuilder.group({
+    nome: [null, Validators.required],
+    cpf: [null, Validators.required],
+    telefone: [null, Validators.required],
+    email: [null, Validators.required],
+    endereco: [null, Validators.required]
+  });;
+  public saved = false;
+  private customerCreateSub: Subscription;
 
-  cadastroCliente: FormGroup;
-  submitted = false;
-  constructor(private formBuilder: FormBuilder){
-    this.cadastroCliente = formBuilder.group({
-    nome: new FormControl(),
-    cpf: new FormControl(),
-    telefone: new FormControl(),
-    email: new FormControl(),
-    endereco: new FormControl()
-  });
-}
- 
+  constructor(
+    private formBuilder: FormBuilder,
+    private customerService: CustomerService,
+  ) { }
+  
   ngOnInit(): void {
+   }
+
+  postData() {
+    this.customerCreateSub = this.customerService.create(this.cadastroCliente.value).subscribe(result => {
+      console.log(result);
+      if (result.data) {
+        this.cadastroCliente.reset();
+        this.saved = true;
+      }
+    });
   }
 
-  postData(){
-    console.log(this.cadastroCliente);
-    console.log(this.cadastroCliente.value)
+  ngOnDestroy(): void {
+    if (this.customerCreateSub) {
+      this.customerCreateSub.unsubscribe();
+    }
   }
 
 }

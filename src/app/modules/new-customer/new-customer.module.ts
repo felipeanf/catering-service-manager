@@ -7,7 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [NewCustomerComponent],
+  declarations: [
+    NewCustomerComponent
+  ],
   imports: [
     CommonModule,
     NewCustomerRoutingModule,

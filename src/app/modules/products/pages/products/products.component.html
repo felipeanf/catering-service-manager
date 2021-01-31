@@ -30,14 +30,14 @@
     <!-- precoProdutoUnitario Column -->
     <ng-container matColumnDef="precoProdutoUnitario">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Preço unidade</th>
-      <td mat-cell *matCellDef="let row">{{row.precoProdutoUnitario}}</td>
+      <td mat-cell *matCellDef="let row">{{row.precoProdutoUnitario * 1}}</td>
     </ng-container>
 
 
     <!-- quantidadeEstoque Column -->
     <ng-container matColumnDef="quantidadeEstoque">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantidade em estoque</th>
-      <td mat-cell *matCellDef="let row">{{row.quantidadeEstoque}}</td>
+      <td mat-cell *matCellDef="let row">{{row.quantidadeEstoque * 1}}</td>
     </ng-container>
 
 

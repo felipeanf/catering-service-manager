@@ -1,6 +1,6 @@
 <div class="box">
   <div class="container">
-    <form class="col-6" [formGroup]="cadastroProduto" (change)="saved = false">
+    <form class="col-16" [formGroup]="cadastroProduto" (change)="saved = false">
       <h1>Cadastro de Novos Produtos</h1>
       <div class="form-group">
         <label for="nome">Nome do Produto</label>
@@ -28,10 +28,11 @@
         <label for="quantidadeEstoque">Estoque Atual</label>
         <input type="number" class="form-control" id="quantidadeEstoque" formControlName="quantidadeEstoque">
       </div>
-      <button type="button" class="btn btn-primary" (click)="postData()" [disabled]="cadastroProduto.invalid">Cadastrar</button>
+      <button type="button" class="button" (click)="postData()" [disabled]="cadastroProduto.invalid">Cadastrar</button>
       <span *ngIf="saved">
         Salvo com sucesso
       </span>
+      <a href="/products" class="button">Voltar</a>
     </form>
   </div>
 </div>

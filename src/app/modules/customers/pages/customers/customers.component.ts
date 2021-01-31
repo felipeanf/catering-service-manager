@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { CustomersDataSource } from '../../customers-datasource';
-import { IProdutos } from '../../../../interfacesBanco/produtos';
+import { IProdutos } from '../../../../InterfacesBanco/produtos';
 import { DataService } from '../../data.service';
 import { IClientes } from 'src/app/InterfacesBanco/clientes';
 //const axios = require('axios').default;

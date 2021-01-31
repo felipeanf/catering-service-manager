@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { IProdutos } from '../../InterfacesBanco/produtos';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -7,14 +6,18 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class DataService {
+export class CustomerService {
   private customersUrl = 'http://localhost:8000/client'; 
   public customers = [];
   
 
   constructor(private http: HttpClient) { }
 
-    getCustomersData(): Observable<any>{
+    getCustomersData(): Observable<any> {
       return this.http.get(this.customersUrl);
+    }
+
+    create(customerData: any): Observable<any> {
+      return this.http.post('http://localhost:8000/client', { client: customerData });
     }
 }
