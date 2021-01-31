@@ -29,15 +29,31 @@
                 {{ product.nome }}
             </option>
         </select>
-        <!-- <input 
+        <input 
             type="number" 
             placeholder="Quantidade" 
             [value]="selectedQuantity"
             (input)="selectedQuantity = $event.target.value"
-        > -->
+        >
         <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
         <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
         <button (click)="handleSelectedProduct()">Adicionar</button>
     </div>
     <div #target></div>
+    <p>Preço total: {{ totalPrice }}</p>
+    Desconto:
+    <input 
+    type="number"
+    [value]="discountPrice"
+    (input)="discountPrice = $event.target.value"
+    (change)="calculateFinalPrice()"
+    >
+    Taxa deslocamento:
+    <input 
+    type="number"
+    [value]="transportTax"
+    (input)="transportTax = $event.target.value"
+    (change)="calculateFinalPrice()"
+    >
+    <p>Preço final: {{ finalPrice }}</p>
 </div>
