@@ -1,0 +1,37 @@
+<div class="box">
+  <div class="container">
+    <form class="col-6" [formGroup]="cadastroProduto" (change)="saved = false">
+      <h1>Cadastro de Novos Produtos</h1>
+      <div class="form-group">
+        <label for="nome">Nome do Produto</label>
+        <input type="text" class="form-control" id="nome" formControlName="nome">
+      </div>
+      <div class="form-group">
+        <label for="categoria">Categoria do Produto</label>
+        <select class="form-control" id="categoria" formControlName="categoria">
+          <option selected disabled hidden [value]="null">Selecione uma opção</option>
+          <option *ngFor="let category of categories" [value]="category.categoriaProduto">{{ category.categoriaProduto }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="unidadeMedida">Unidade</label>
+        <select class="form-control" id="unidadeMedida" formControlName="unidadeMedida">
+          <option selected disabled hidden [value]="null">Selecione uma opção</option>
+          <option *ngFor="let measurementUnit of measurementUnitOptions" [value]="measurementUnit.unidadeMedida">{{ measurementUnit.unidadeMedida }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="precoProdutoUnitario">Preço do Produto</label>
+        <input type="number" class="form-control" id="precoProdutoUnitario" formControlName="precoProdutoUnitario">
+      </div>
+      <div class="form-group">
+        <label for="quantidadeEstoque">Estoque Atual</label>
+        <input type="number" class="form-control" id="quantidadeEstoque" formControlName="quantidadeEstoque">
+      </div>
+      <button type="button" class="btn btn-primary" (click)="postData()" [disabled]="cadastroProduto.invalid">Cadastrar</button>
+      <span *ngIf="saved">
+        Salvo com sucesso
+      </span>
+    </form>
+  </div>
+</div>
