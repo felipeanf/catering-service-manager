@@ -6,7 +6,15 @@
     <input type="date" placeholder="Data">
     <input type="time" placeholder="Hora">
     <input type="number" placeholder="Nº Pessoas">
-    <input type="text" placeholder="Tipo de evento">
+    <select>
+        <option selected disabled hidden>Selecione o tipo de evento</option>
+            <option 
+                *ngFor="let event of eventTypes"
+                [value]="event.tipoEvento"
+            >
+                {{ event.tipoEvento }}
+            </option>
+    </select>
 
     <br>
     <p>Itens</p>
@@ -21,8 +29,14 @@
                 {{ product.nome }}
             </option>
         </select>
-        <input type="number" placeholder="Quantidade">
+        <!-- <input 
+            type="number" 
+            placeholder="Quantidade" 
+            [value]="selectedQuantity"
+            (input)="selectedQuantity = $event.target.value"
+        > -->
         <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
+        <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
         <button (click)="handleSelectedProduct()">Adicionar</button>
     </div>
     <div #target></div>

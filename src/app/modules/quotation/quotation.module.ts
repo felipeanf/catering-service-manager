@@ -6,7 +6,12 @@ import { NewQuotationComponent } from './pages/new-quotation/new-quotation.compo
 import { SelectedProductComponent } from './components/selected-product/selected-product.component';
 
 @NgModule({
-  declarations: [QuotationComponent, NewQuotationComponent, SelectedProductComponent],
+  declarations: [
+    QuotationComponent,
+    NewQuotationComponent,
+    SelectedProductComponent,
+
+  ],
   imports: [
     CommonModule,
     QuotationRoutingModule
