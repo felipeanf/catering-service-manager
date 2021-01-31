@@ -9,25 +9,23 @@ import {FormGroup, FormControl, FormBuilder, Validators, ReactiveFormsModule} fr
   styleUrls: ['new-product.component.css']
 })
 export class NewProductComponent implements OnInit {
- 
-  cadastroProduto: FormGroup;
-  submitted = false;
-  constructor(private formBuilder: FormBuilder){
-    this.cadastroProduto = formBuilder.group({
-    nomeproduto: new FormControl(),
-    categoriaproduto: new FormControl(),
+  public cadastroProduto = this.formBuilder.group({
+    nomeProduto: new FormControl(),
+    categoriaProduto: new FormControl(),
     unidadeMedida: new FormControl(),
-    precoproduto: new FormControl(),
-    estoqueproduto: new FormControl()
-  });
-}
+    precoProduto: new FormControl(),
+    estoqueProduto: new FormControl()
+  });;
+  public submitted = false;
+
+  constructor(private formBuilder: FormBuilder) { }
  
   ngOnInit(): void {
   }
 
-  postData(){
+  postData() {
     console.log(this.cadastroProduto);
-    console.log(this.cadastroProduto.value)
+    console.log(this.cadastroProduto.value);
   }
 
 }
