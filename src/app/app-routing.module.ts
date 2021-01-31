@@ -10,6 +10,11 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: async () => (await import('./modules/products/products.module')).ProductsModule
+  },
+
+  {
+    path: 'new-product',
+    loadChildren: async () => (await import('./modules/new-product/new-product.module')).NewProductModule
   }
 
 ];

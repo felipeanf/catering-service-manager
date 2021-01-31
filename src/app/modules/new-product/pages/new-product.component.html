@@ -1,0 +1,28 @@
+<div class="box">
+<div class="container">
+<form [attr.formGroup]="cadastroProduto" (ngSubmit)="postData();"> 
+   <h1>Cadastro de Novos Produtos</h1>
+   <div class="form-group">
+     <label for="nomeProduto">Nome do Produto</label>
+     <input type="text" class="form-control" id="nomeProduto" formControlName="nomeproduto">
+   </div>
+   <div class="form-group">
+    <label for="categoriaProduto">Categoria do Produto</label>
+    <input type="text" class="form-control" id="categoriaProduto" formControlName="categoriaproduto">
+  </div>
+  <div class="form-group">
+    <label for="unidadeMedida">Unidade(Kg, L, uni)</label>
+    <input type="text" class="form-control" id="unidadeMedida" formControlName="unidademedida">
+  </div>
+  <div class="form-group">
+    <label for="precoProduto">Preço do Produto</label>
+    <input type="text" class="form-control" id="precoProduto" formControlName="precoproduto">
+  </div>
+  <div class="form-group">
+    <label for="estoqueProduto">Estoque Atual</label>
+    <input type="text" class="form-control" id="estoqueProduto" formControlName="estoqueproduto">
+  </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+ </form>
+</div>
+</div>
