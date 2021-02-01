@@ -1,0 +1,10 @@
+@import url@import url('https://fonts.googleapis.com/css2?family=Laila&display=swap');;
+
+@font-face {
+    font-family: 'Capriola';
+    src: url('https://fonts.googleapis.com/css2?family=Capriola&display=swap');
+}
+
+app-main-nav {
+    font-family: 'Capriola';
+}

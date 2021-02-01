@@ -1,0 +1,29 @@
+.new-quotation-container {
+    margin:15px;
+}
+
+.btn {
+    background-color: rgb(190, 64, 64);
+    color:white;
+    height: 37px;
+}
+
+.single-row {
+    display: flex;
+    flex-direction: row;
+}
+
+input, label {
+    display:block;
+}
+
+hr {
+    margin-top: 1px;
+    margin-bottom: 16px;
+    border: 1px solid;
+}
+
+.section-title {
+    margin-top: 16px;
+}
+
