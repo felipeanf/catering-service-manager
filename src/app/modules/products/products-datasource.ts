@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { map, tap } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
-import { IProdutos } from '../../InterfacesBanco/produtos';
+import { IProdutos } from '../../interfacesBanco/produtos';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductsService } from '../../shared/services/products.service';

@@ -6,7 +6,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CustomersComponent } from './pages/customers/customers.component';
 import { DataService } from './data.service';
-import { IClientes } from 'src/app/InterfacesBanco/clientes';
+import { IClientes } from 'src/app/interfacesBanco/clientes';
 
 
 

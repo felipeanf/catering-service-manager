@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IProdutos } from 'src/app/InterfacesBanco/produtos';
+import { IItemProduto } from '../../models/item.interface';
 
 @Component({
   selector: 'app-selected-product',
@@ -8,14 +8,10 @@ import { IProdutos } from 'src/app/InterfacesBanco/produtos';
 })
 export class SelectedProductComponent implements OnInit {
 
-  @Input() product: IProdutos;
-  @Input() quantity: number;
-  @Input() price: number;
-
+  @Input() item: IItemProduto;
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.product);
   }
 
 }

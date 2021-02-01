@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'new-customer',
     loadChildren: async () => (await import('./modules/new-customer/new-customer.module')).NewCustomerModule
-  }
+  },
 
   {
     path: 'customers',

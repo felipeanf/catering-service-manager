@@ -1,43 +1,158 @@
 <div class="new-quotation-container">
     <h1>Novo orçamento</h1>
+    <form 
+        [formGroup]="newQuotation"
+    >
+    <section class="section-title">
+        Cliente 
+        <hr>
+    </section>
 
-    <input type="text" placeholder="Cliente">
-    <input type="text" placeholder="Endereço">
-    <input type="date" placeholder="Data">
-    <input type="time" placeholder="Hora">
-    <input type="number" placeholder="Nº Pessoas">
-    <select>
-        <option selected disabled hidden>Selecione o tipo de evento</option>
-            <option 
-                *ngFor="let event of eventTypes"
-                [value]="event.tipoEvento"
-            >
-                {{ event.tipoEvento }}
-            </option>
-    </select>
+        <section class="row">
+            <div class="form-group mx-2">
+                <select formControlName="idCliente" class="form-control">
+                    <option selected disabled hidden>Selecione o cliente</option>
+                        <option 
+                            *ngFor="let customer of customers"
+                            [value]="customer.id"
+                        >
+                            {{ customer.nome }}
+                        </option>
+                </select>
+            </div>
 
-    <br>
-    <p>Itens</p>
-    <br>
-    <div class="select-product">
-        <select (change)="productSelected($event)">
-            <option selected disabled hidden>Selecione um produto</option>
-            <option 
-                *ngFor="let product of products; let i = index"
-                [value]="product.id"
+            <div class="form-group mx-2">
+
+                <input
+                    class="form-control"
+                    type="text" 
+                    id="endereco"
+                    placeholder="Endereço"
+                    formControlName="enderecoEvento"
+                >
+            </div>
+        </section>
+
+        <section class="section-title">
+            Evento 
+            <hr>
+        </section>
+
+        <section class="row">
+            <div class="form-group mx-2">
+                <input 
+                    type="datetime-local"
+                    placeholder="Data e hora"
+                    formControlName="dataEvento"
+                    class="form-control"
+                >
+            </div>
+
+            <div class="form-group mx-2">
+                <input
+                    type="number"
+                    placeholder="Nº Pessoas"
+                    class="form-control"
+                    formControlName="quantidadePessoas"
+                >
+            </div>
+
+            <div class="form-group mx-2">     
+                <select formControlName="tipoEvento" class="form-control">
+                    <option selected disabled hidden>Selecione o tipo de evento</option>
+                        <option 
+                            *ngFor="let event of eventTypes"
+                            [value]="event.tipoEvento"
+                        >
+                            {{ event.tipoEvento }}
+                        </option>
+                </select>
+            </div>
+        </section>
+
+        <section class="section-title">
+            Itens 
+            <hr>
+        </section>
+            
+        <section class="row">
+            <div class="form-group mx-2 col-4">
+                <label for="quantidade" class="labels">Produto:</label>
+                <div class="select-product">
+                    <select (change)="productSelected($event)" class="form-control">
+                        <option selected disabled hidden>Selecione um produto</option>
+                        <option 
+                            *ngFor="let product of products; let i = index"
+                            [value]="product.id"
+                        >
+                            {{ product.nome }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="quantidade" class="labels">Quantidade:</label>
+                <div class="input-group">
+                    <input 
+                        type="number" 
+                        id="quantidade" 
+                        [ngModelOptions]="{standalone: true}"
+                        [(ngModel)]="selectedQuantity"
+                        class="form-control"
+                    >
+                    <div class="input-group-append">
+                        <span class="input-group-text">
+                            {{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <button (click)="handleSelectedProduct()" class="btn">Adicionar</button>
+            <p class="font-weight-bold price ml-5">Preço: R$ {{ currentProduct !== null ? ((currentProduct.precoProdutoUnitario * selectedQuantity) | number ) : '0' }}</p>
+        </section>
+
+        <div #target></div>
+
+        <p class="font-weight-bold price total-price">Preço total dos produtos: R$ {{ totalPrice | number }}</p>
+        
+        <section class="section-title">
+            Ajustes de preço 
+            <hr>
+        </section>
+
+        <section class="row">
+            <div class="form-group mx-2">
+                <label for="desconto">Desconto:</label>
+    
+                <input 
+                    type="number"
+                    id="desconto"
+                    (change)="calculateFinalPrice()"
+                    formControlName="valorDesconto"
+                    class="form-control"
+                >
+            </div>
+    
+            <div class="form-group mx-2">
+                <label for="desconto">Taxa de deslocamento:</label>
+    
+                <input  
+                type="number"
+                (change)="calculateFinalPrice()"
+                formControlName="taxaDeslocamento"
+                class="form-control"
             >
-                {{ product.nome }}
-            </option>
-        </select>
-        <!-- <input 
-            type="number" 
-            placeholder="Quantidade" 
-            [value]="selectedQuantity"
-            (input)="selectedQuantity = $event.target.value"
-        > -->
-        <p>{{ currentProduct !== null ? currentProduct.unidadeMedida : '' }}</p>
-        <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
-        <button (click)="handleSelectedProduct()">Adicionar</button>
-    </div>
-    <div #target></div>
+            </div>
+    
+            <p class="price font-weight-bold">Preço final: R$ {{ finalPrice | number }}</p>
+    
+            <button 
+                type="submit" 
+                (click)="handleSubmit()"
+                [disabled]="newQuotation.invalid"
+                class="btn"
+            >Enviar</button>
+        </section>
+    </form>
 </div>

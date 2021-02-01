@@ -1,1 +1,20 @@
-<button [routerLink]="'new'">Novo orçamento</button>
+<button class="btn" [routerLink]="'new'">Novo orçamento</button>
+<section class="col-12 justify-content-center">
+    <section class="row">
+        <p class="col-3">Id</p>
+    
+        <p class="col-4">Tipo de Evento</p>
+    
+        <p class="col-4">Data do evento<p>
+    </section>
+    <div *ngFor="let quotation of quotations" [routerLink]="['/quotation', quotation.id]">
+        <section class="row">
+            <p class="col-3">{{quotation.id}}</p>
+        
+            <p class="col-4">{{ quotation.tipoEvento }}</p>
+        
+            <p class="col-4">{{ quotation.dataEvento | date }}<p>
+        </section>
+    </div>
+
+</section>

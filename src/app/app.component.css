@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal&display=swap');
+
+@font-face {
+    font-family: 'Arsenal';
+    src: ('https://fonts.googleapis.com/css2?family=Arsenal&display=swap');
+}
+
+app-main-nav {
+    font-family: 'Arsenal';
+}
