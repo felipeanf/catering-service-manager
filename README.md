@@ -19,18 +19,18 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 # Principais Funcionalidades
 
 <ul>
-<li>Gerar orçamentos Dinâmicamente;</li>
-<li>Exibir listagem de orçamentos gerados de forma comprimida e em detalhes;</li>
-<li>Possuir interface para cadastro de novos Clientes;</li>
-<li>Possuir interface para cadastro de novos Produtos;</li>
-<li>Exibir listagem de Clientes cadastrados;</li>
-<li>Exibir listagem de Produtos cadastrados;</li>
-<li>Banco de dados com infos dos orçamentos/eventos;</li>
-<li>Banco de dados com infos dos produtos;</li>
-<li>Banco de dados com infos dos clientes;</li>
-<li>Landing Page Para solicitação de orçamentos;</li>
-<li>Export em PDF do orçamento;</li>
-<li>Gerar Lista de Compras Automaticamente.</li>
+<li>Gerar orçamentos Dinâmicamente; - em fase de teste</li>
+<li>Exibir listagem de orçamentos gerados de forma comprimida e em detalhes; - em fase de teste</li>
+<li>Possuir interface para cadastro de novos Clientes; - em fase de teste</li>
+<li>Possuir interface para cadastro de novos Produtos; - em fase de teste</li>
+<li>Exibir listagem de Clientes cadastrados; - em fase de teste</li>
+<li>Exibir listagem de Produtos cadastrados; - em fase de teste</li>
+<li>Banco de dados com infos dos orçamentos/eventos; - pronto</li>
+<li>Banco de dados com infos dos produtos; - pronto</li>
+<li>Banco de dados com infos dos clientes; - pronto</li>
+<li>Landing Page Para solicitação de orçamentos; - (Não Implementado)</li>
+<li>Export em PDF do orçamento; - (Não Implementado)</li>
+<li>Gerar Lista de Compras Automaticamente. - (Não Implementado)</li>
   
 
 
