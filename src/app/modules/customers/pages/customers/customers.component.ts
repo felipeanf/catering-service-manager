@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
 import { IClientes } from 'src/app/interfacesBanco/clientes';
 import { CustomersDataSource } from '../../customers-datasource';
+import { IProdutos } from '../../../../InterfacesBanco/produtos';
 import { DataService } from '../../data.service';
 
 @Component({

@@ -1,29 +1,32 @@
-<div class="box">
-    <div class="container">
-    <form [attr.formGroup]="cadastroCliente" (ngSubmit)="postData();"> 
-       <h1>Cadastro de Novos Clientes</h1>
-       <div class="form-group">
-         <label for="nome">Nome</label>
-         <input type="text" class="form-control" id="nome" formControlName="nome">
-       </div>
-       <div class="form-group">
-        <label for="cpf">CPF</label>
-        <input type="text" class="form-control" id="cpf" formControlName="cpf">
+    <div class="box">
+      <div class="container">
+        <form class="col-16" [formGroup]="cadastroCliente" (change)="saved = false">
+          <h1>Cadastro de Novos Clientes</h1>
+          <div class="form-group">
+            <label for="nome">Nome do Cliente</label>
+            <input type="text" class="form-control" id="nome" formControlName="nome">
+          </div>
+          <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" class="form-control" id="cpf" formControlName="cpf">
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" id="telefone" formControlName="telefone">
+          </div>
+         <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input type="text" class="form-control" id="endereco" formControlName="endereco">
+          </div>
+          <button type="button" class="button" (click)="postData()" [disabled]="cadastroCliente.invalid">Cadastrar</button>
+          <span *ngIf="saved">
+            Salvo com sucesso
+          </span>
+          <a href="/customers" class="button">Voltar</a>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="telefone">Telefone</label>
-        <input type="tel" class="form-control" id="telefone" formControlName="telefone">
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email">
-      </div>
-      <div class="form-group">
-        <label for="endereço">Endereço</label>
-        <input type="text" class="form-control" id="endereço" formControlName="endereco">
-      </div>
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-     </form>
     </div>
-    </div>
-    
