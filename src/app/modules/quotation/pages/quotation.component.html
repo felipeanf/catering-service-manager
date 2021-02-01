@@ -1,19 +1,22 @@
+<div class="d-flex justify-content-end">
 <button class="btn" [routerLink]="'new'">Novo orçamento</button>
+</div>
 <section class="col-12 justify-content-center">
-    <section class="row">
-        <p class="col-3">Id</p>
+    <section class="row ml-5">
+        <p class="col-3 font-weight-bold">Id</p>
     
-        <p class="col-4">Tipo de Evento</p>
+        <p class="col-4 font-weight-bold">Tipo de Evento</p>
     
-        <p class="col-4">Data do evento<p>
+        <p class="col-4 font-weight-bold">Data do evento<p>
     </section>
+
     <div *ngFor="let quotation of quotations" [routerLink]="['/quotation', quotation.id]">
-        <section class="row">
-            <p class="col-3">{{quotation.id}}</p>
+        <section class="row ml-5">
+            <p class="col-3 item">{{quotation.id}}</p>
         
-            <p class="col-4">{{ quotation.tipoEvento }}</p>
+            <p class="col-4 item">{{ quotation.tipoEvento }}</p>
         
-            <p class="col-4">{{ quotation.dataEvento | date }}<p>
+            <p class="col-4 item">{{ quotation.dataEvento | date }}<p>
         </section>
     </div>
 

@@ -2,8 +2,7 @@
     background-color: rgb(190, 64, 64);
     color:white;
     height: 37px;
-    margin-top: 28px;
-    margin-left: 20px;
+    margin: 20px;
     display: flex;
     -ms-flex-align: end;
 }
@@ -16,10 +15,20 @@ p {
     font-size: larger;
 }
 
+.items-row:hover {
+    transition: 1s;
+    background-color: white;
+    color: #343a40;
+}
+
 section {
     margin:none;
 }
 
 .row {
     max-height: 20px;
+}
+
+.item {
+    cursor: pointer;
 }

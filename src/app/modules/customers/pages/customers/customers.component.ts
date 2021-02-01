@@ -19,7 +19,7 @@ export class CustomersComponent implements AfterViewInit, OnInit {
   dataSource!: CustomersDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ["id","nome","categoria", "unidadeMedida", "precoProdutoUnitario", "quantidadeEstoque"];
+  displayedColumns = ["id","nome","telefone", "cpf", "email"];
 
   public customers:IClientes[] = [];
 
