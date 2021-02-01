@@ -1,6 +1,7 @@
 .sidenav-container {
   height: 100%;
-  background: rgb(190, 64, 64);
+  background-color: #F8F9F9 ;
+  overflow-y: none;
 }
 
 .sidenav {
@@ -17,4 +18,9 @@
   top: 0;
   z-index: 1;
   background: black;
+  height:6vh;
+}
+
+.mat-drawer-container {
+  color:black;
 }

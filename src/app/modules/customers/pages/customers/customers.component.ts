@@ -2,12 +2,10 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { IClientes } from 'src/app/interfacesBanco/clientes';
 import { CustomersDataSource } from '../../customers-datasource';
 import { IProdutos } from '../../../../InterfacesBanco/produtos';
 import { DataService } from '../../data.service';
-import { IClientes } from 'src/app/InterfacesBanco/clientes';
-//const axios = require('axios').default;
-
 
 @Component({
   selector: 'Customers',

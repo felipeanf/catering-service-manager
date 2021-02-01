@@ -1,0 +1,84 @@
+<div *ngIf="quotations.length > 0" class="edit-quotation-container">
+
+    <h1>Orçamento número {{ quotations[0].id }} </h1>
+
+    <section class="section-title">
+        Cliente 
+        <hr>
+    </section>
+    <div class="row mb-1">
+        <div class="div col-6">
+            <div class="font-weight-bold">Nome:</div> {{quotations[0].nomeCliente}}
+        </div>
+        <div class="div col-6">
+            <div class="font-weight-bold">Data orçamento:</div> {{quotations[0].dataOrcamento | date }}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="div col-6">
+            <div class="font-weight-bold">Status:</div> {{quotations[0].statusOrcamento}}
+        </div>
+        <div class="div col-6">
+        </div>
+    </div>
+
+    <section class="section-title">
+        Evento 
+        <hr>
+    </section>
+    
+    <div class="row mb-1">
+        <div class="col-6">
+            <div class="font-weight-bold">Tipo de evento:</div> {{quotations[0].tipoEvento}}
+        </div>
+        <div class="col-6">
+            <div class="font-weight-bold">Data do evento:</div> {{quotations[0].dataEvento | date}}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-6">
+            <div class="font-weight-bold">Quantidade de pessoas:</div> {{quotations[0].quantidadePessoas}}
+        </div>
+        <div class="col-6">
+            <div class="font-weight-bold">Endereço:</div> {{quotations[0].enderecoEvento}}
+        </div>
+    </div>
+    
+    
+    
+    <section class="section-title">
+        Itens orçados 
+        <hr>
+    </section>
+    <div *ngFor="let quotation of quotations" class="ml-3">
+        <div class="row">
+            <p class="col-3">{{quotation.nomeProduto}} </p>
+            <p class="col-4">{{quotation.quantidade}} {{quotation.unidadeMedida}}</p>
+            <p class="col-4">{{ quotation.precoProdutoOrcado | number }}</p>
+        </div>
+    </div>
+
+    <section class="section-title">
+        Preço 
+        <hr>
+    </section>
+
+    <div class="row mb-1">
+        <div class="col-6">
+            <div class="font-weight-bold">Taxa deslocamento:</div> R$ {{quotations[0].taxaDeslocamento | number}}
+        </div>
+        <div class="col-6">
+            <div class="font-weight-bold">Desconto:</div> R$ {{quotations[0].valorDesconto | number}}
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-6">
+            <div class="font-weight-bold">Valor final:</div> R$ {{quotations[0].valorFinal | number}}
+        </div>
+        <div class="col-6">
+        </div>
+    </div>
+</div>

@@ -5,10 +5,11 @@
 
 
 .button {
-  background-color:#343a40;
+  background-color: rgb(190, 64, 64);
   border: none;
+  border-radius: 5px;
   color: white;
-  padding: 15px 32px;
+  padding: 15px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;

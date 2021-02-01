@@ -19,12 +19,17 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 # Principais Funcionalidades
 
 <ul>
-<li>Gerar orçamentos sistematicamente;</li>
-<li>Gerar listas de compras sistematicamente;</li>
-<li>Gerar contratos sistematicamente;</li>
-<li>Landing page para público em geral solictar orçamentos;</li>
-<li>Banco de dados com infos dos clientes;</li>
+<li>Gerar orçamentos Dinâmicamente;</li>
+<li>Exibir listagem de orçamentos gerados de forma comprimida e em detalhes;</li>
+<li>Possuir interface para cadastro de novos Clientes;</li>
+<li>Possuir interface para cadastro de novos Produtos;</li>
+<li>Exibir listagem de Clientes cadastrados;</li>
+<li>Exibir listagem de Produtos cadastrados;</li>
 <li>Banco de dados com infos dos orçamentos/eventos;</li>
+<li>Banco de dados com infos dos produtos;</li>
+<li>Banco de dados com infos dos clientes.</li>
+
+
 </ul>
 
 # Repositórios
@@ -45,7 +50,7 @@ Back-end: https://github.com/marinafaria/catering-service-manager-backend
 <li>Scrum - Para gerenciamento do projeto;</li>
 <li>GitHub - Para controle de versão;</li>
 <li>Angular - Para frontend;</li>
-<li>Golang ou Java - Para backend;</li>
+<li>JavaScript - Para backend;</li>
 <li>SQL/MySQL/SQLite - Para banco de dados</li>
 </ul>
 
