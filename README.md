@@ -45,7 +45,7 @@ Back-end: https://github.com/marinafaria/catering-service-manager-backend
 <li>Scrum - Para gerenciamento do projeto;</li>
 <li>GitHub - Para controle de versão;</li>
 <li>Angular - Para frontend;</li>
-<li>Golang ou Java - Para backend;</li>
+<li>JavaScript - Para backend;</li>
 <li>SQL/MySQL/SQLite - Para banco de dados</li>
 </ul>
 
