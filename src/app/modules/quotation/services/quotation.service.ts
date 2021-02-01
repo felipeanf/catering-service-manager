@@ -15,6 +15,11 @@ export class QuotationService {
     return this.http.get(this.url);
   }
 
+  getQuotationById(id: string | null): Observable<any>{
+    console.log(this.url + '/' + id );
+    return this.http.get(this.url + '/' + id );
+  }
+
   create(selectedProducts: IItemProduto[], quotation: IOrcamentos): Observable<any> {
     const items = this.getItemsArray(selectedProducts);
     return this.http.post('http://localhost:8000/quotation', { 

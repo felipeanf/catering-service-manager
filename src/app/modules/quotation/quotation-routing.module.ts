@@ -7,8 +7,8 @@ import { QuotationComponent } from './pages/quotation.component';
 
 const routes: Routes = [
   { path: '', component: QuotationComponent },
-  { path: ':id', component: EditQuotationComponent },
   { path: 'new', component: NewQuotationComponent },
+  { path: ':id', component: EditQuotationComponent },
 ];
 
 @NgModule({

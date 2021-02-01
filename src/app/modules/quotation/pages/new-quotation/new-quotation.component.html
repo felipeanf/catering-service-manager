@@ -2,7 +2,6 @@
     <h1>Novo orçamento</h1>
     <form 
         [formGroup]="newQuotation"
-        (change)="saved = false"
     >
     <section class="section-title">
         Cliente 
@@ -21,7 +20,6 @@
                         </option>
                 </select>
             </div>
-        
 
             <div class="form-group mx-2">
 
@@ -155,9 +153,6 @@
                 [disabled]="newQuotation.invalid"
                 class="btn"
             >Enviar</button>
-            <span *ngIf="saved">
-                Salvo com sucesso
-              </span>
         </section>
     </form>
 </div>

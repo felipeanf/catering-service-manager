@@ -1,1 +1,13 @@
-<p>edit-quotation works!</p>
+<div *ngIf="quotations.length > 0">
+    <h1>Orçamento número {{ quotations[0].id }} </h1>
+    
+    {{quotations[0].tipoEvento}}
+    
+    
+    Produtos no orçamento:
+    <div *ngFor="let quotation of quotations">
+        {{quotation.nome}}
+        {{quotation.quantidade}}
+        {{quotation.unidadeMedida}}
+    </div>
+</div>

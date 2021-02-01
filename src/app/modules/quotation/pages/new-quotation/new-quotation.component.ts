@@ -1,5 +1,6 @@
 import { Component, ComponentFactoryResolver, ComponentRef, OnChanges, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IClientes } from 'src/app/interfacesBanco/clientes';
 import { IProdutos } from 'src/app/interfacesBanco/produtos';
@@ -25,8 +26,6 @@ export class NewQuotationComponent implements OnInit, OnChanges, OnDestroy {
   customers: IClientes[] = [];
 
   item: IItemProduto;
-
-  public saved = false;
 
   totalPrice: number = 0;
   finalPrice: number = 0;
@@ -56,14 +55,14 @@ export class NewQuotationComponent implements OnInit, OnChanges, OnDestroy {
     private quotationService: QuotationService,
     private customerService: CustomerService,
     private resolver: ComponentFactoryResolver,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.productGetDataSub = this.productsService.getProductsData().subscribe(data => this.products = data.data);
     this.eventTypesGetDataSub = this.eventTypesService.getEventTypes().subscribe(data => this.eventTypes = data.data);
     this.customerGetDataSub = this.customerService.getCustomers().subscribe(data => this.customers = data.data);
-
   }
 
   ngOnDestroy(){
@@ -113,10 +112,9 @@ export class NewQuotationComponent implements OnInit, OnChanges, OnDestroy {
     this.quotationService.create(this.selectedProducts, { ...this.newQuotation.value, valorFinal: this.finalPrice }).subscribe(result => {
       console.log(result);
       if (result.data) {
-        this.newQuotation.reset();
-        this.saved = true;
+        this.router.navigate([`quotation/${result.data.id}`]);
       }
-    })
+    });
   }
 
 }
