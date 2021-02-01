@@ -24,3 +24,7 @@
 .mat-drawer-container {
   color:black;
 }
+
+img {
+  cursor: pointer;
+}

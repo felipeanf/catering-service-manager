@@ -17,12 +17,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './modules/home/pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainNavComponent
+    MainNavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

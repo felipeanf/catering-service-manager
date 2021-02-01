@@ -3,7 +3,7 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-      <img src="../../assets/logo.jpg" width="80%">
+      <img src="../../assets/logo.jpg" routerLink="/" width="80%">
     <mat-nav-list>
       <a mat-list-item routerLink="/quotation" >Orçamentos</a>
       <a mat-list-item routerLink="/products">Produtos</a>

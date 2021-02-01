@@ -1,0 +1,15 @@
+.home-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.text {
+    font-size: x-large;
+    background: rgba(255, 255, 255, 0.7);
+    padding-bottom: 25px;
+    padding-top: 25px;
+}
+
+div{ 
+    background-image: url('../../../../../assets/home.jfif');
+}

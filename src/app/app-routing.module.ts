@@ -25,7 +25,11 @@ const routes: Routes = [
   {
     path: 'customers',
     loadChildren: async () => (await import('./modules/customers/customers.module')).CustomersModule
-  }
+  },
+  {
+    path: '',
+    loadChildren: async () => (await import('./modules/home/home.module')).HomeModule
+  },
 ];
 
 @NgModule({
