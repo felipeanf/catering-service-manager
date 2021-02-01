@@ -1,7 +1,8 @@
-<p>{{item.product?.nome}}</p>
+<div class="row col-12">
+    <p class="col-4">{{item.product?.nome}}</p>
 
-<p>{{item.quantity}}</p>
+    <p class="col-4">{{item.quantity}} {{item.product?.unidadeMedida}}</p>
 
-<p>{{item.product?.unidadeMedida}}</p>
+    <p class="col-4">R$ {{item.price | number }}</p>
+</div>
 
-<p>{{item.price}}</p>

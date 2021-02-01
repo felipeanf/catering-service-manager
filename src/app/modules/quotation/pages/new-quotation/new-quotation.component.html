@@ -4,9 +4,11 @@
         [formGroup]="newQuotation"
         (change)="saved = false"
     >
-
+    <section class="section-title">
         Cliente 
         <hr>
+    </section>
+
         <section class="row">
             <div class="form-group mx-2">
                 <select formControlName="idCliente" class="form-control">
@@ -74,10 +76,10 @@
             Itens 
             <hr>
         </section>
-
-        <label for="quantidade">Quantidade</label>
+            
         <section class="row">
             <div class="form-group mx-2 col-4">
+                <label for="quantidade" class="labels">Produto:</label>
                 <div class="select-product">
                     <select (change)="productSelected($event)" class="form-control">
                         <option selected disabled hidden>Selecione um produto</option>
@@ -91,7 +93,8 @@
                 </div>
             </div>
 
-            <div class="form-group col-4">
+            <div class="form-group">
+                <label for="quantidade" class="labels">Quantidade:</label>
                 <div class="input-group">
                     <input 
                         type="number" 
@@ -107,45 +110,54 @@
                     </div>
                 </div>
             </div>
-
-            <p>{{ currentProduct !== null ? (currentProduct.precoProdutoUnitario * selectedQuantity) : '' }}</p>
             <button (click)="handleSelectedProduct()" class="btn">Adicionar</button>
-
+            <p class="font-weight-bold price ml-5">Preço: R$ {{ currentProduct !== null ? ((currentProduct.precoProdutoUnitario * selectedQuantity) | number ) : '0' }}</p>
         </section>
 
         <div #target></div>
-        <p>Preço total: {{ totalPrice }}</p>
 
-        <div class="form-group mx-2">
-            <label for="desconto">Desconto:</label>
+        <p class="font-weight-bold price total-price">Preço total dos produtos: R$ {{ totalPrice | number }}</p>
+        
+        <section class="section-title">
+            Ajustes de preço 
+            <hr>
+        </section>
 
-            <input 
+        <section class="row">
+            <div class="form-group mx-2">
+                <label for="desconto">Desconto:</label>
+    
+                <input 
+                    type="number"
+                    id="desconto"
+                    (change)="calculateFinalPrice()"
+                    formControlName="valorDesconto"
+                    class="form-control"
+                >
+            </div>
+    
+            <div class="form-group mx-2">
+                <label for="desconto">Taxa de deslocamento:</label>
+    
+                <input  
                 type="number"
-                id="desconto"
                 (change)="calculateFinalPrice()"
-                formControlName="valorDesconto"
+                formControlName="taxaDeslocamento"
                 class="form-control"
             >
-        </div>
-
-        <div class="form-group mx-2">
-            <label for="desconto">Taxa de deslocamento:</label>
-
-            <input  
-            type="number"
-            (change)="calculateFinalPrice()"
-            formControlName="taxaDeslocamento"
-            class="form-control"
-        >
-        </div>
-
-        <p>Preço final: {{ finalPrice }}</p>
-
-        <button 
-            type="submit" 
-            (click)="handleSubmit()"
-            [disabled]="newQuotation.invalid"
-            class="btn"
-        >Enviar</button>
+            </div>
+    
+            <p class="price font-weight-bold">Preço final: R$ {{ finalPrice | number }}</p>
+    
+            <button 
+                type="submit" 
+                (click)="handleSubmit()"
+                [disabled]="newQuotation.invalid"
+                class="btn"
+            >Enviar</button>
+            <span *ngIf="saved">
+                Salvo com sucesso
+              </span>
+        </section>
     </form>
 </div>
