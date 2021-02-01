@@ -1,4 +1,18 @@
 .data-table, #paginator{
-  width: 80%;
-  margin-left: 250px;
+  width: 100%;
+}
+
+
+.button {
+  background-color: rgb(190, 64, 64);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }

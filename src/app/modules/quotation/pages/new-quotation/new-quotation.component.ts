@@ -1,10 +1,9 @@
 import { Component, ComponentFactoryResolver, ComponentRef, OnChanges, OnDestroy, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { IClientes } from 'src/app/InterfacesBanco/clientes';
-import { IOrcamentos } from 'src/app/InterfacesBanco/orcamentos';
-import { IProdutos } from 'src/app/InterfacesBanco/produtos';
-import { ITipoEvento } from 'src/app/InterfacesBanco/tipoEvento';
+import { IClientes } from 'src/app/interfacesBanco/clientes';
+import { IProdutos } from 'src/app/interfacesBanco/produtos';
+import { ITipoEvento } from 'src/app/interfacesBanco/tipoEvento';
 import { CustomerService } from 'src/app/shared/services/customer.service';
 import { EventTypesService } from 'src/app/shared/services/event-types.service';
 import { ProductsService } from 'src/app/shared/services/products.service';

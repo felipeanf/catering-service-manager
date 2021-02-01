@@ -1,16 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IOrcamentos } from 'src/app/InterfacesBanco/orcamentos';
-import { IProdutos } from 'src/app/InterfacesBanco/produtos';
+import { IOrcamentos } from 'src/app/interfacesBanco/orcamentos';
 import { IItemProduto } from '../models/item.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuotationService {
-
+  url:string = 'http://localhost:8000/quotation';
   constructor(private http: HttpClient) { }
+
+  getQuotations(): Observable<any>{
+    return this.http.get(this.url);
+  }
 
   create(selectedProducts: IItemProduto[], quotation: IOrcamentos): Observable<any> {
     const items = this.getItemsArray(selectedProducts);

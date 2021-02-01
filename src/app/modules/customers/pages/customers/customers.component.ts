@@ -2,10 +2,9 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { IClientes } from 'src/app/interfacesBanco/clientes';
 import { CustomersDataSource } from '../../customers-datasource';
 import { DataService } from '../../data.service';
-import { IClientes } from 'src/app/InterfacesBanco/clientes';
-
 
 @Component({
   selector: 'Customers',

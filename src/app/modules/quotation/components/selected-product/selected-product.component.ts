@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IProdutos } from 'src/app/InterfacesBanco/produtos';
 import { IItemProduto } from '../../models/item.interface';
 
 @Component({

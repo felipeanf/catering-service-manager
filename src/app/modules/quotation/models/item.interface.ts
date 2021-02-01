@@ -1,4 +1,4 @@
-import { IProdutos } from "src/app/InterfacesBanco/produtos";
+import { IProdutos } from "src/app/interfacesBanco/produtos";
 
 export interface IItemProduto {
     product: IProdutos | null;
