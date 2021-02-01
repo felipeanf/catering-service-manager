@@ -27,7 +27,12 @@ Automatizar, integrar e facilitar o gerenciamento de negócios de catering, cria
 <li>Exibir listagem de Produtos cadastrados;</li>
 <li>Banco de dados com infos dos orçamentos/eventos;</li>
 <li>Banco de dados com infos dos produtos;</li>
-<li>Banco de dados com infos dos clientes.</li>
+<li>Banco de dados com infos dos clientes;</li>
+<li>Landing Page Para solicitação de orçamentos;</li>
+<li>Export em PDF do orçamento;</li>
+<li>Gerar Lista de Compras Automaticamente.</li>
+  
+
 
 
 </ul>
