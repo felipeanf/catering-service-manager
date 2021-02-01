@@ -4,4 +4,22 @@
     height: 37px;
     margin-top: 28px;
     margin-left: 20px;
+    display: flex;
+    -ms-flex-align: end;
+}
+
+p {
+    border: 1px solid;
+    margin:none;
+    background-color: #212F3C;
+    color: white;
+    font-size: larger;
+}
+
+section {
+    margin:none;
+}
+
+.row {
+    max-height: 20px;
 }
