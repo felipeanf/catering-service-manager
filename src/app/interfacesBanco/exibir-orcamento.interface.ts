@@ -6,7 +6,8 @@ import { ITipoEvento } from './tipoEvento';
 export interface IExibirOrcamento {
     id: number;
     tipoEvento: ITipoEvento;
-    nome: string;
+    nomeCliente: string;
+    nomeProduto: string;
     dataOrcamento: Date;
     idCliente: IClientes;
     dataEvento: Date;
