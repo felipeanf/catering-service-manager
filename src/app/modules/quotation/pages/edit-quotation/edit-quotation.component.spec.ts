@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { QuotationService } from '../../services/quotation.service';
 
 import { EditQuotationComponent } from './edit-quotation.component';
 
@@ -8,7 +10,8 @@ describe('EditQuotationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EditQuotationComponent ]
+      declarations: [ EditQuotationComponent ],
+      providers: [ ActivatedRoute, QuotationService ]
     })
     .compileComponents();
   });

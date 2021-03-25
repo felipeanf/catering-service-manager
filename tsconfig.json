@@ -24,7 +24,11 @@
       "dom",
       "dom.iterable"
     ],
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "types": [
+      "jest",
+      "node"
+    ]
   },
   "angularCompilerOptions": {
     "types": ["node"],
