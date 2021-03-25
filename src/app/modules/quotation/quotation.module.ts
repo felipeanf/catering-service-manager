@@ -21,6 +21,10 @@ import { EditQuotationComponent } from './pages/edit-quotation/edit-quotation.co
     ReactiveFormsModule,
     FormsModule
   ],
+  exports: [
+    FormsModule,
+    ReactiveFormsModule
+  ],
   entryComponents: [
     SelectedProductComponent
   ]
